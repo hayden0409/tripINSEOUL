@@ -4,7 +4,17 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
     <configuration>
  		<typeAliases>
-            <typeAlias type="com.example.dto.MemberVO" alias="memberVO"/>
+ 			<typeAlias type="com.tripinseoul.VO.TestVO" alias="TestVO"/>
+            <typeAlias type="com.tripinseoul.VO.MemberVO" alias="memberVO"/>
+            <typeAlias type="com.tripinseoul.VO.BoardVO" alias="BoardVO"/>
+            <typeAlias type="com.tripinseoul.VO.InquiryBoardVO" alias="InquiryBoardVO"/>
+            <typeAlias type="com.tripinseoul.VO.Cat1VO" alias="Cat1VO"/>
+            <typeAlias type="com.tripinseoul.VO.Cat2VO" alias="Cat2VO"/>
+            <typeAlias type="com.tripinseoul.VO.CommentVO" alias="CommentVO"/>
+            <typeAlias type="com.tripinseoul.VO.DetailPlanVO" alias="DetailPlanVO"/>
+            <typeAlias type="com.tripinseoul.VO.GoodVO" alias="GoodVO"/>
+            <typeAlias type="com.tripinseoul.VO.LocationVO" alias="LocationVO"/>
+            <typeAlias type="com.tripinseoul.VO.PlanVO" alias="PlanVO"/>
         </typeAliases>
 
         

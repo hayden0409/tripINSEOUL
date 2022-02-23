@@ -6,7 +6,7 @@
 <title>Home</title>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <h1> test page 2</h1>
  
     <table>
         <thead>
@@ -17,11 +17,11 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${ml}" var="member">
+            <c:forEach items="${tl}" var="tl">
                 <tr>
-                    <td>${member.id}</td>
-                    <td>${member.pw}</td>
-                    <td>${member.name}</td>
+                    <td>${tl.id}</td>
+                    <td>${tl.pw}</td>
+                    <td>${tl.name}</td>
                 </tr>
             </c:forEach> 
         </tbody>

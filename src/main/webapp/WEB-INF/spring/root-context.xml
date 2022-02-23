@@ -11,13 +11,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
-	<context:component-scan base-package="com.example.service"></context:component-scan>
-	<context:component-scan base-package="com.example.dao"></context:component-scan>
-	 <!-- MySQL dataSource -->
+	<context:component-scan base-package="com.tripinseoul.VO"></context:component-scan>
+	<context:component-scan base-package="com.tripinseoul.DAO"></context:component-scan>
+	
+	<!-- MySQL dataSource -->
 	
 	<!-- db 연결 -->
 	<context:property-placeholder location="classpath:config/database.properties"/>
-    <bean id="dataSource"
+   <!--  <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="url"
@@ -25,8 +26,19 @@
         </property>
         <property name="username" value="tripinseoul"></property>
         <property name="password" value="1234"></property>
+    </bean> -->
     
+    <!--  datasource prop 파일로 -->
+    <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${class}"></property>
+        <property name="url" value="${url}">
+        </property>
+        <property name="username" value="${username}"></property>
+        <property name="password" value="${password}"></property>
     </bean>
+    
+    <!-- session -->
        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:/mybatis-config.xml"/>
@@ -36,6 +48,14 @@
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
     	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
+    
+ 
+	
+	<!-- tx manager -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+    
     <!-- 파일 업로드 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="100000"/> 
