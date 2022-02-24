@@ -13,12 +13,12 @@
 	
 	<context:component-scan base-package="com.tripinseoul.VO"></context:component-scan>
 	<context:component-scan base-package="com.tripinseoul.DAO"></context:component-scan>
-	
+	<context:component-scan base-package="com.tripinseoul.tripinseoul"></context:component-scan>
 	<!-- MySQL dataSource -->
 	
 	<!-- db 연결 -->
 	<context:property-placeholder location="classpath:config/database.properties"/>
-   <!--  <bean id="dataSource"
+    <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="url"
@@ -26,17 +26,17 @@
         </property>
         <property name="username" value="tripinseoul"></property>
         <property name="password" value="1234"></property>
-    </bean> -->
+    </bean> 
     
     <!--  datasource prop 파일로 -->
-    <bean id="dataSource"
+    <!--  <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${class}"></property>
         <property name="url" value="${url}">
         </property>
         <property name="username" value="${username}"></property>
         <property name="password" value="${password}"></property>
-    </bean>
+    </bean>  -->
     
     <!-- session -->
        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

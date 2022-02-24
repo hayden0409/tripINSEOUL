@@ -39,16 +39,19 @@ public class HomeController {
 	@RequestMapping(value="/test1",method=RequestMethod.GET)
 	public String testPage() {
 		
+		
 		return "folder1/test1";
 	}
 	
 	@RequestMapping(value="/test1",method=RequestMethod.POST)
 	public String testPage(@RequestParam(value="file") MultipartFile file,HttpServletRequest request,Model model) {
+		
 		if(!file.isEmpty()){
+			
 			String fileName = file.getOriginalFilename();
-			//file separator를 쓸것
-			String imgs = context.getRealPath("\\resources\\imgs\\"+fileName);
-			System.out.println(imgs);
+		
+			String imgs = context.getRealPath(File.separator+"resources"+File.separator+"imgs"+File.separator+fileName);
+			System.out.println("img path>>>"+imgs);
 			model.addAttribute("path",imgs);
 			try {
 				file.transferTo(new File(imgs));
@@ -58,4 +61,6 @@ public class HomeController {
 		}
 		return "folder1/file_uploaded";
 	}
+	
+	
 }

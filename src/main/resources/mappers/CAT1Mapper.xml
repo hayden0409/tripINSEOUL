@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 자바객체 필드명 id img -->
+<!-- 테이블 칼럼명 C1_ID C1_IMG -->
+<mapper namespace="CAT1">
+	<select id="getC1" resultType="Cat1VO">
+		<![CDATA[
+			SELECT * FROM CAT1
+			WHERE C1_ID = #{id}
+        ]]>
+	</select>
+	<select id="getC1List" resultType="Cat1VO">
+		<![CDATA[
+			SELECT * FROM CAT1
+        ]]>
+	</select> 
+	<insert id="insert">
+        <![CDATA[
+			INSERT INTO CAT1 (C1_ID,C1_IMG)
+			VALUES (#{id},#{img})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE CAT1 SET
+			C1_IMG = #{img}
+			WHERE C1_ID = #{id}
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM CAT1
+			WHERE C1_ID = #{id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>
