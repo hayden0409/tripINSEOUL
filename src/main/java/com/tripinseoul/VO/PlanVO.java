@@ -3,55 +3,56 @@ package com.tripinseoul.VO;
 import java.util.Date;
 
 public class PlanVO {
-	private int planID;
-	private String writer;
-	private Date regDate;
-	private String planTitle;
-	private Date planStartDate;
-	private Date planEndDate;
 	
-	public int getPlanID() {
-		return planID;
+	private int p_id;
+	private String m_id;
+	private Date p_regdate;
+	private String p_title;
+	private Date p_stdate;
+	private Date p_eddate;
+	public int getP_id() {
+		return p_id;
 	}
-	public void setPlanID(int planID) {
-		this.planID = planID;
+	public void setP_id(int p_id) {
+		this.p_id = p_id;
 	}
-	public String getWriter() {
-		return writer;
+	public String getM_id() {
+		return m_id;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getP_regdate() {
+		return p_regdate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setP_regdate(Date p_regdate) {
+		this.p_regdate = p_regdate;
 	}
-	public String getPlanTitle() {
-		return planTitle;
+	public String getP_title() {
+		return p_title;
 	}
-	public void setPlanTitle(String planTitle) {
-		this.planTitle = planTitle;
+	public void setP_title(String p_title) {
+		this.p_title = p_title;
 	}
-	public Date getPlanStartDate() {
-		return planStartDate;
+	public Date getP_stdate() {
+		return p_stdate;
 	}
-	public void setPlanStartDate(Date planStartDate) {
-		this.planStartDate = planStartDate;
+	public void setP_stdate(Date p_stdate) {
+		this.p_stdate = p_stdate;
 	}
-	public Date getPlanEndDate() {
-		return planEndDate;
+	public Date getP_eddate() {
+		return p_eddate;
 	}
-	public void setPlanEndDate(Date planEndDate) {
-		this.planEndDate = planEndDate;
+	public void setP_eddate(Date p_eddate) {
+		this.p_eddate = p_eddate;
 	}
-	
 	@Override
 	public String toString() {
-		return "PlanVO [planID=" + planID + ", writer=" + writer + ", regDate=" + regDate + ", planTitle=" + planTitle
-				+ ", planStartDate=" + planStartDate + ", planEndDate=" + planEndDate + "]";
+		return "PlanVO [p_id=" + p_id + ", m_id=" + m_id + ", p_regdate=" + p_regdate + ", p_title=" + p_title
+				+ ", p_stdate=" + p_stdate + ", p_eddate=" + p_eddate + "]";
 	}
+	
+	
 	
 	
 	

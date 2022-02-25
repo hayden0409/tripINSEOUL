@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+
+<mapper namespace="DetailPlan">
+
+	<select id="getDetailPlan" resultType="DetailPlanVO" >
+		<![CDATA[
+			SELECT * FROM DETAIL_PLAN
+			WHERE DP_ID = #{dp_id}
+        ]]>
+	</select>
+	
+	<select id="getDetailPlanList" resultType="DetailPlanVO" >
+		<![CDATA[
+			SELECT * FROM DETAIL_PLAN
+        ]]>
+	</select> 
+	
+	<insert id="insert">
+        <![CDATA[
+			INSERT INTO DETAIL_PLAN(P_ID,L_ID,DP_DAY)
+			VALUES(#{p_id},#{l_id},#{dp_day});
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE DETAIL_PLAN
+			SET P_ID = #{p_id},
+				L_ID = #{l_id},
+				DP_DAY = #{dp_day}
+			WHERE DP_ID = #{dp_id}
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM DETAIL_PLAN
+			WHERE DP_ID = #{dp_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

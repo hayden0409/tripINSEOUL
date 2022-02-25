@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+
+<mapper namespace="Good">
+
+	<select id="getGood" resultType="GoodVO" >
+		<![CDATA[
+			SELECT * FROM GOOD
+			WHERE G_ID = #{g_id}
+        ]]>
+	</select>
+	
+	<select id="getGoodList" resultType="GoodVO" >
+		<![CDATA[
+			SELECT * FROM GOOD
+        ]]>
+	</select> 
+	
+	<insert id="insert">
+        <![CDATA[
+			INSERT INTO GOOD (B_ID,M_ID)
+			VALUES (#{b_id},#{m_id})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE GOOD SET
+			B_ID = #{b_id},
+			M_ID = #{m_id}
+			WHERE G_ID = #{g_id}
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM GOOD
+			WHERE G_ID = #{g_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

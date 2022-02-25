@@ -27,8 +27,7 @@ public class HomeController {
 	@Inject
 	private ServletContext context;
 	
-	
-	
+
 	@RequestMapping("/test2")
 	public String indexPage(Model model) throws Exception{
 		List<TestVO> testList = test.getTestList();

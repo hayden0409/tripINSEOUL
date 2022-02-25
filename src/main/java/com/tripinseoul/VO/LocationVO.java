@@ -3,95 +3,89 @@ package com.tripinseoul.VO;
 import java.util.Date;
 
 public class LocationVO {
-	private int locationID;
-	private String C1ID;
-	private String C2ID;
-	private String locationName;
-	private String locationImg;
-	private String locationLatitude;
-	private String locationLongitude;
-	private String locationZoomLevel;
-	private String locationTel;
-	private String locationAddress;
-	private Date locationLastModified;
-	
-	public int getLocationID() {
-		return locationID;
+	private int l_id;
+	private String c1_id;
+	private String c2_id;
+	private String l_name;
+	private String l_img;
+	private String l_lat;
+	private String l_lng;
+	private String l_zoomlev;
+	private String l_tel;
+	private String l_address;
+	private Date l_lastmodified;
+	public int getL_id() {
+		return l_id;
 	}
-	public void setLocationID(int locationID) {
-		this.locationID = locationID;
+	public void setL_id(int l_id) {
+		this.l_id = l_id;
 	}
-	public String getC1ID() {
-		return C1ID;
+	public String getC1_id() {
+		return c1_id;
 	}
-	public void setC1ID(String c1id) {
-		C1ID = c1id;
+	public void setC1_id(String c1_id) {
+		this.c1_id = c1_id;
 	}
-	public String getC2ID() {
-		return C2ID;
+	public String getC2_id() {
+		return c2_id;
 	}
-	public void setC2ID(String c2id) {
-		C2ID = c2id;
+	public void setC2_id(String c2_id) {
+		this.c2_id = c2_id;
 	}
-	public String getLocationName() {
-		return locationName;
+	public String getL_name() {
+		return l_name;
 	}
-	public void setLocationName(String locationName) {
-		this.locationName = locationName;
+	public void setL_name(String l_name) {
+		this.l_name = l_name;
 	}
-	public String getLocationImg() {
-		return locationImg;
+	public String getL_img() {
+		return l_img;
 	}
-	public void setLocationImg(String locationImg) {
-		this.locationImg = locationImg;
+	public void setL_img(String l_img) {
+		this.l_img = l_img;
 	}
-	public String getLocationLatitude() {
-		return locationLatitude;
+	public String getL_lat() {
+		return l_lat;
 	}
-	public void setLocationLatitude(String locationLatitude) {
-		this.locationLatitude = locationLatitude;
+	public void setL_lat(String l_lat) {
+		this.l_lat = l_lat;
 	}
-	public String getLocationLongitude() {
-		return locationLongitude;
+	public String getL_lng() {
+		return l_lng;
 	}
-	public void setLocationLongitude(String locationLongitude) {
-		this.locationLongitude = locationLongitude;
+	public void setL_lng(String l_lng) {
+		this.l_lng = l_lng;
 	}
-	public String getLocationZoomLevel() {
-		return locationZoomLevel;
+	public String getL_zoomlev() {
+		return l_zoomlev;
 	}
-	public void setLocationZoomLevel(String locationZoomLevel) {
-		this.locationZoomLevel = locationZoomLevel;
+	public void setL_zoomlev(String l_zoomlev) {
+		this.l_zoomlev = l_zoomlev;
 	}
-	public String getLocationTel() {
-		return locationTel;
+	public String getL_tel() {
+		return l_tel;
 	}
-	public void setLocationTel(String locationTel) {
-		this.locationTel = locationTel;
+	public void setL_tel(String l_tel) {
+		this.l_tel = l_tel;
 	}
-	public String getLocationAddress() {
-		return locationAddress;
+	public String getL_address() {
+		return l_address;
 	}
-	public void setLocationAddress(String locationAddress) {
-		this.locationAddress = locationAddress;
+	public void setL_address(String l_address) {
+		this.l_address = l_address;
 	}
-	public Date getLocationLastModified() {
-		return locationLastModified;
+	public Date getL_lastmodified() {
+		return l_lastmodified;
 	}
-	public void setLocationLastModified(Date locationLastModified) {
-		this.locationLastModified = locationLastModified;
+	public void setL_lastmodified(Date l_lastmodified) {
+		this.l_lastmodified = l_lastmodified;
 	}
 	@Override
 	public String toString() {
-		return "LocationVO [locationID=" + locationID + ", C1ID=" + C1ID + ", C2ID=" + C2ID + ", locationName="
-				+ locationName + ", locationImg=" + locationImg + ", locationLatitude=" + locationLatitude
-				+ ", locationLongitude=" + locationLongitude + ", locationZoomLevel=" + locationZoomLevel
-				+ ", locationTel=" + locationTel + ", locationAddress=" + locationAddress + ", locationLastModified="
-				+ locationLastModified + "]";
+		return "LocationVO [l_id=" + l_id + ", c1_id=" + c1_id + ", c2_id=" + c2_id + ", l_name=" + l_name + ", l_img="
+				+ l_img + ", l_lat=" + l_lat + ", l_lng=" + l_lng + ", l_zoomlev=" + l_zoomlev + ", l_tel=" + l_tel
+				+ ", l_address=" + l_address + ", l_lastmodified=" + l_lastmodified + "]";
 	}
-	
-	
-	
 	
 	
 	

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="CAT2">
+
+	<select id="getC2" resultType="Cat2VO" parameterType="Cat2VO">
+		<![CDATA[
+			SELECT * FROM CAT2
+			WHERE C2_ID = #{c2_id}
+        ]]>
+	</select>
+	
+	<select id="getC2List" resultType="Cat2VO" parameterType="Cat2VO">
+		<![CDATA[
+			SELECT * FROM CAT2
+        ]]>
+	</select> 
+	
+	<insert id="insert">
+        <![CDATA[
+			INSERT INTO CAT2 (C2_ID,C2_IMG)
+			VALUES (#{c2_id},#{c2_img})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE CAT2 SET
+			C2_IMG = #{c2_img}
+			WHERE C2_ID = #{c2_id}
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM CAT2
+			WHERE C2_ID = #{c2_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

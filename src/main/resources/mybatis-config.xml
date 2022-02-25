@@ -5,7 +5,7 @@
     <configuration>
  		<typeAliases>
  			<typeAlias type="com.tripinseoul.VO.TestVO" alias="TestVO"/>
-            <typeAlias type="com.tripinseoul.VO.MemberVO" alias="memberVO"/>
+            <typeAlias type="com.tripinseoul.VO.MemberVO" alias="MemberVO"/>
             <typeAlias type="com.tripinseoul.VO.BoardVO" alias="BoardVO"/>
             <typeAlias type="com.tripinseoul.VO.InquiryBoardVO" alias="InquiryBoardVO"/>
             <typeAlias type="com.tripinseoul.VO.Cat1VO" alias="Cat1VO"/>

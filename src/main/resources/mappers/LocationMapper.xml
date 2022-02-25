@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+
+<mapper namespace="Location">
+	
+	<select id="getLocation" resultType="LocationVO">
+		<![CDATA[
+			SELECT * FROM LOCATION
+			WHERE L_ID = #{l_id}
+        ]]>
+	</select>
+	
+	<select id="getLocationList" resultType="LocationVO">
+		<![CDATA[
+			SELECT * FROM LOCATION
+        ]]>
+	</select> 
+	
+	<insert id="insert" >
+        <![CDATA[
+			INSERT INTO LOCATION(C1_ID,C2_ID,L_NAME,L_IMG,L_LAT,L_LNG,L_ZOOMLEV,L_TEL,L_ADDRESS,L_LASTMODIFIED)
+			VALUES (#{c1_id},#{c2_id},#{l_name},#{l_img},#{l_lat},#{l_lng},#{l_zoomlev},#{l_tel},#{l_address},#{l_lastmodified})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE LOCATION SET 
+				C1_ID = #{c1_id},
+				C2_ID = #{c2_id},
+				L_NAME = #{l_name},
+				L_IMG = #{l_img},
+				L_LAT = #{l_lat},
+				L_LNG = #{l_lng},
+				L_ZOOMLEV = #{l_zoomlev},
+				L_TEL = #{l_tel},
+				L_ADDRESS = #{l_address},
+				L_LASTMODIFIED = #{l_lastmodified}
+			WHERE L_ID = #{l_id};
+		
+        ]]>
+    </update>
+    
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM LOCATION
+			WHERE L_ID = #{l_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

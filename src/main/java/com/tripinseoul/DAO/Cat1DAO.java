@@ -26,12 +26,13 @@ public class Cat1DAO {
 		
 		session.delete("CAT1.delete",vo);
 	}
-	public Cat1VO getCat1(Cat1VO vo) {
+	public Cat1VO getCat(Cat1VO vo) {
 		
 		return (Cat1VO) session.selectOne("CAT1.getC1", vo);
-	}
-	public List<Cat1VO> getCat1List(Cat1VO vo){
 		
-		return session.selectList("CAT1.getC1List",vo);
+	}
+	public List<Cat1VO> getCatList(Cat1VO vo){
+		
+		return session.selectList("CAT1.getC1List", vo);
 	}
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 
+	BoardVO 객체 필드
+	
+	private int b_id;
+	private String m_id;
+	private String b_title;
+	private String b_content;
+	private String b_img;
+	private Date b_regdate;
+	private String b_cat;
+	private int b_goodcnt;
+	private int b_commentcnt;
+	private int b_viewcnt;
+ -->
+<mapper namespace="Board">
+	
+	<select id="getBoard" resultType="BoardVO">
+		<![CDATA[
+			SELECT * FROM BOARD
+			WHERE B_ID = #{b_id}
+        ]]>
+	</select>
+	
+	<select id="getBoardList" resultType="BoardVO">
+		<![CDATA[
+			SELECT * FROM BOARD
+        ]]>
+	</select> 
+	
+	<insert id="insert" >
+        <![CDATA[
+			INSERT INTO BOARD(M_ID,B_TITLE,B_CONTENT,B_IMG,B_REGDATE,B_CAT)
+			VALUES (#{m_id},#{b_title},#{b_content},#{b_img},#{b_regdate},#{b_cat})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE BOARD SET 
+			M_ID = #{m_id},
+			B_TITLE = #{b_title},
+			B_CONTENT = #{b_content},
+			B_IMG = #{b_img},
+			B_REGDATE = #{b_regdate},
+			B_CAT = #{b_cat}, 
+			B_GOODCNT = #{b_goodcnt},
+			B_COMMENTCNT = #{b_commentcnt},
+			B_VIEWCNT = #{b_viewcnt}
+			WHERE B_ID = #{b_id};
+		
+        ]]>
+    </update>
+    
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM BOARD
+			WHERE B_ID = #{b_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

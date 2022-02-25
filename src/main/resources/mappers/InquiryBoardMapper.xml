@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+
+<mapper namespace="InquiryBoard">
+	
+	<select id="getInquiryBoard" resultType="InquiryBoardVO">
+		<![CDATA[
+			SELECT * FROM INQUIRY_BOARD
+			WHERE IB_ID = #{ib_id}
+        ]]>
+	</select>
+	
+	<select id="getInquiryBoardList" resultType="InquiryBoardVO">
+		<![CDATA[
+			SELECT * FROM INQUIRY_BOARD
+        ]]>
+	</select> 
+	
+	<insert id="insert" >
+        <![CDATA[
+			INSERT INTO INQUIRY_BOARD(M_ID, IB_TITLE, IB_CONTENT, IB_REGDATE)
+			VALUES (#{m_id},#{ib_title},#{ib_content},#{ib_regdate})
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE INQUIRY_BOARD SET 
+			M_ID = #{m_id},
+			IB_TITLE = #{ib_title},
+			IB_CONTENT = #{ib_content},
+			IB_REGDATE = #{ib_regdate}
+			WHERE IB_ID = #{ib_id};
+        ]]>
+    </update>
+    
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM INQUIRY_BOARD
+			WHERE IB_ID = #{ib_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	
+	<context:component-scan base-package="com.tripinseoul.VO"></context:component-scan>
+	<context:component-scan base-package="com.tripinseoul.DAO"></context:component-scan>
+	<context:component-scan base-package="com.tripinseoul.tripinseoul"></context:component-scan>
+	<!-- MySQL dataSource -->
+	
+	<!-- db 연결 -->
+	<context:property-placeholder location="classpath:config/database.properties"/>
+   <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url"
+            value="jdbc:mysql://127.0.0.1:3306/tripinseoul?useSSL=false&amp;serverTimezone=UTC">
+        </property>
+        <property name="username" value="tripinseoul"></property>
+        <property name="password" value="1234"></property>
+    </bean> 
+    
+    <!--  datasource prop 파일로 -->
+    <!-- <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${class}"></property>
+        <property name="url" value="${url}">
+        </property>
+        <property name="username" value="${username}"></property>
+        <property name="password" value="${password}"></property>
+    </bean> -->   
+    
+    <!-- session -->
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+    </bean>
+    
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+    	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    
+ 
+	
+	<!-- tx manager -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+    
+    <!-- 파일 업로드 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000"/> 
+	</bean>
+    
+    <bean id="c1dao" class="com.tripinseoul.DAO.Cat1DAO"/>
+
+
+            
+
+
+</beans>

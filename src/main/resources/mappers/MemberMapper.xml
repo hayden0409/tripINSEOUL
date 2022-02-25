@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 
+	private String m_id;
+	private String m_password;
+	private String m_email;
+	private String m_name;
+	private String m_gender;
+	private Date m_regdate;
+	private String m_ismanager;
+	private String m_nickname;
+ -->
+<mapper namespace="Member">
+
+	<select id="getMember" resultType="MemberVO">
+		<![CDATA[
+			SELECT * FROM MEMBER
+			WHERE M_ID = #{m_id} 
+        ]]>
+	</select>
+	
+	<select id="getMemberList" resultType="MemberVO">
+		<![CDATA[
+			SELECT * FROM MEMBER
+        ]]>
+	</select> 
+	
+	<insert id="insert" >
+        <![CDATA[
+			INSERT INTO MEMBER(M_ID,M_PASSWORD,M_EMAIL,M_NAME,M_GENDER,M_REGDATE,M_ISMANAGER,M_NICKNAME)
+			VALUES (#{m_id},#{m_password},#{m_email},#{m_name},#{m_gender},#{m_regdate},#{m_ismanager},#{m_nickname})
+			
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE MEMBER SET 
+			M_PASSWORD = #{m_password},
+			M_EMAIL = #{m_email},
+			M_NAME = #{m_name}, 
+			M_GENDER = #{m_gender}, 
+			M_REGDATE = #{m_regdate}, 
+			M_ISMANAGER = #{m_ismanager}, 
+			M_NICKNAME = #{m_nickname}
+			WHERE M_ID = #{m_id}
+		
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM MEMBER 
+			WHERE M_ID = #{m_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>

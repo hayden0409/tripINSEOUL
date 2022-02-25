@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+
+<mapper namespace="Plan">
+
+	<select id="getPlan" resultType="PlanVO" >
+		<![CDATA[
+			SELECT * FROM PLAN
+			WHERE P_ID = #{p_id}
+        ]]>
+	</select>
+	
+	<select id="getPlanList" resultType="PlanVO" >
+		<![CDATA[
+			SELECT * FROM PLAN
+        ]]>
+	</select> 
+	
+	<insert id="insert">
+        <![CDATA[
+			INSERT INTO PLAN(M_ID,P_REGDATE,P_TITLE,P_STDATE,P_EDDATE)
+			VALUES(#{m_id},#{p_regdate},#{p_title},#{p_stdate},#{p_eddate});
+        ]]>
+    </insert>
+    <update id="update">
+    	<![CDATA[
+			UPDATE PLAN
+			SET M_ID = #{m_id},
+				P_REGDATE = #{p_regdate},
+				P_TITLE = #{p_title},
+				P_STDATE = #{p_stdate},
+				P_EDDATE = #{p_eddate}
+			WHERE P_ID = #{p_id}
+        ]]>
+    </update>
+    <delete id="delete">
+    	<![CDATA[
+			DELETE FROM PLAN
+			WHERE P_ID = #{p_id}
+        ]]>
+    </delete>
+    
+    
+
+</mapper>
