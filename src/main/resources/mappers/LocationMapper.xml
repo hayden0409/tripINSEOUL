@@ -13,9 +13,17 @@
         ]]>
 	</select>
 	
+	<select id="searchLocationByName" resultType="LocationVO">
+		<![CDATA[
+			SELECT * FROM LOCATION
+			WHERE L_NAME LIKE CONCAT('%',#{l_name},'%')
+        ]]>
+	</select> 
+	
 	<select id="getLocationList" resultType="LocationVO">
 		<![CDATA[
 			SELECT * FROM LOCATION
+			WHERE C1_ID = #{c1_id} AND C2_ID =#{c2_id}
         ]]>
 	</select> 
 	

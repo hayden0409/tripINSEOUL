@@ -14,6 +14,8 @@
 	<context:component-scan base-package="com.tripinseoul.VO"></context:component-scan>
 	<context:component-scan base-package="com.tripinseoul.DAO"></context:component-scan>
 	<context:component-scan base-package="com.tripinseoul.tripinseoul"></context:component-scan>
+	<context:component-scan base-package="com.tripinseoul.*"></context:component-scan>
+	
 	<!-- MySQL dataSource -->
 	
 	<!-- db 연결 -->
@@ -22,7 +24,7 @@
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="url"
-            value="jdbc:mysql://127.0.0.1:3306/tripinseoul?useSSL=false&amp;serverTimezone=UTC">
+            value="jdbc:mysql://127.0.0.1:3306/tripinseoul?useSSL=false&amp;serverTimezone=Asia/Seoul">
         </property>
         <property name="username" value="tripinseoul"></property>
         <property name="password" value="1234"></property>

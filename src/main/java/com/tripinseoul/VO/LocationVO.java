@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class LocationVO {
 	private int l_id;
-	private String c1_id;
-	private String c2_id;
+	private int c1_id;
+	private	int c2_id;
 	private String l_name;
 	private String l_img;
 	private String l_lat;
@@ -20,16 +20,16 @@ public class LocationVO {
 	public void setL_id(int l_id) {
 		this.l_id = l_id;
 	}
-	public String getC1_id() {
+	public int getC1_id() {
 		return c1_id;
 	}
-	public void setC1_id(String c1_id) {
+	public void setC1_id(int c1_id) {
 		this.c1_id = c1_id;
 	}
-	public String getC2_id() {
+	public int getC2_id() {
 		return c2_id;
 	}
-	public void setC2_id(String c2_id) {
+	public void setC2_id(int c2_id) {
 		this.c2_id = c2_id;
 	}
 	public String getL_name() {
@@ -86,7 +86,6 @@ public class LocationVO {
 				+ l_img + ", l_lat=" + l_lat + ", l_lng=" + l_lng + ", l_zoomlev=" + l_zoomlev + ", l_tel=" + l_tel
 				+ ", l_address=" + l_address + ", l_lastmodified=" + l_lastmodified + "]";
 	}
-	
 	
 	
 	

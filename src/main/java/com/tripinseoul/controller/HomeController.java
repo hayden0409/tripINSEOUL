@@ -27,6 +27,10 @@ public class HomeController {
 	@Inject
 	private ServletContext context;
 	
+	@RequestMapping("/")
+	public String home() {
+		return "index";
+	}
 
 	@RequestMapping("/test2")
 	public String indexPage(Model model) throws Exception{
@@ -59,6 +63,13 @@ public class HomeController {
 			}
 		}
 		return "folder1/file_uploaded";
+	}
+	@RequestMapping("test")
+	public String asynce_test(HttpServletRequest req){
+		System.out.println("test");
+		System.out.println(req.getParameter("e"));
+		
+		return "folder1/tt";
 	}
 	
 	

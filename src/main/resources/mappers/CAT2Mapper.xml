@@ -20,14 +20,14 @@
 	
 	<insert id="insert">
         <![CDATA[
-			INSERT INTO CAT2 (C2_ID,C2_IMG)
-			VALUES (#{c2_id},#{c2_img})
+			INSERT INTO CAT2 (C2_NAME)
+			VALUES (#{c2_name})
         ]]>
     </insert>
     <update id="update">
     	<![CDATA[
 			UPDATE CAT2 SET
-			C2_IMG = #{c2_img}
+			C2_NAME = #{c2_name}
 			WHERE C2_ID = #{c2_id}
         ]]>
     </update>

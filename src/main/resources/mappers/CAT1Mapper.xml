@@ -9,7 +9,7 @@
 	<select id="getC1" resultType="Cat1VO" >
 		<![CDATA[
 			SELECT * FROM CAT1
-			WHERE C1_ID = #{id}
+			WHERE C1_ID = #{c1_id}
         ]]>
 	</select>
 	
@@ -21,21 +21,21 @@
 	
 	<insert id="insert">
         <![CDATA[
-			INSERT INTO CAT1 (C1_ID,C1_IMG)
-			VALUES (#{id},#{img})
+			INSERT INTO CAT1 (C1_NAME)
+			VALUES (#{c1_name})
         ]]>
     </insert>
     <update id="update">
     	<![CDATA[
 			UPDATE CAT1 SET
-			C1_IMG = #{img}
-			WHERE C1_ID = #{id}
+			C1_NAME = #{c1_name}
+			WHERE C1_ID = #{c1_id}
         ]]>
     </update>
     <delete id="delete">
     	<![CDATA[
 			DELETE FROM CAT1
-			WHERE C1_ID = #{id}
+			WHERE C1_ID = #{c1_id}
         ]]>
     </delete>
     

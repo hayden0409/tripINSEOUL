@@ -7,13 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> index page </h1>
-	
-	
-	<h2><a href="/test1">test1</a> </h2>
-	<h2><a href="/test2">test2</a> </h2>
-	<img src="resources/imgs/example.jpg">
-	
-
+	<h1> community detail</h1>
+	community detail
 </body>
 </html>

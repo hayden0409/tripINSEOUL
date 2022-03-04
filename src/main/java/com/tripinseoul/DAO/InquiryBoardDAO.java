@@ -23,9 +23,13 @@ public class InquiryBoardDAO {
 	public void delete(InquiryBoardVO vo){
 		session.delete("InquiryBoard.delete",vo);
 	}
+	public int getCount(InquiryBoardVO vo){
+		return session.selectOne("InquiryBoard.getCount",vo);
+	}
 	public InquiryBoardVO getInquiryBoard(InquiryBoardVO vo){
 		return (InquiryBoardVO) session.selectOne("InquiryBoard.getInquiryBoard",vo);
 	}
+	
 	public List<InquiryBoardVO> getInquiryBoardList(InquiryBoardVO vo){
 		return session.selectList("InquiryBoard.getInquiryBoardList",vo);
 	}

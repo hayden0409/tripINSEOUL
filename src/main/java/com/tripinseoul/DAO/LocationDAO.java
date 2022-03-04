@@ -29,4 +29,7 @@ public class LocationDAO {
 	public List<LocationVO> getLocationList(LocationVO vo){
 		return session.selectList("Location.getLocationList",vo);
 	}
+	public List<LocationVO> searchLocationByName(LocationVO vo){
+		return session.selectList("Location.searchLocationByName",vo);
+	}
 }

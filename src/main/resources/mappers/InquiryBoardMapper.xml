@@ -5,6 +5,19 @@
  
 
 <mapper namespace="InquiryBoard">
+	<select id="getCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM INQUIRY_BOARD
+		]]>
+			<if test="keyword != null">
+       			<if test="search == 'title'">
+       				WHERE IB_TITLE LIKE CONCAT('%',#{keyword},'%')
+       			</if>
+				<if test="search == 'content'">
+       				WHERE IB_CONTENT LIKE CONCAT('%',#{keyword},'%')
+       			</if>
+			</if> 
+	</select>
 	
 	<select id="getInquiryBoard" resultType="InquiryBoardVO">
 		<![CDATA[
@@ -12,17 +25,28 @@
 			WHERE IB_ID = #{ib_id}
         ]]>
 	</select>
-	
 	<select id="getInquiryBoardList" resultType="InquiryBoardVO">
 		<![CDATA[
 			SELECT * FROM INQUIRY_BOARD
         ]]>
+       		<if test="keyword != null">
+       			<if test="search == 'title'">
+       				WHERE IB_TITLE LIKE CONCAT('%',#{keyword},'%')
+       			</if>
+				<if test="search == 'content'">
+       				WHERE IB_CONTENT LIKE CONCAT('%',#{keyword},'%')
+       			</if>
+			</if> 
+   		<![CDATA[
+    		ORDER BY IB_ID DESC
+			LIMIT #{from},#{howMany}
+        ]]> 
 	</select> 
 	
 	<insert id="insert" >
         <![CDATA[
-			INSERT INTO INQUIRY_BOARD(M_ID, IB_TITLE, IB_CONTENT, IB_REGDATE)
-			VALUES (#{m_id},#{ib_title},#{ib_content},#{ib_regdate})
+			INSERT INTO INQUIRY_BOARD(M_ID, IB_TITLE, IB_CONTENT, IB_REGDATE,IB_REPLY)
+			VALUES (#{m_id},#{ib_title},#{ib_content},#{ib_regdate},#{ib_reply})
         ]]>
     </insert>
     <update id="update">
@@ -31,7 +55,8 @@
 			M_ID = #{m_id},
 			IB_TITLE = #{ib_title},
 			IB_CONTENT = #{ib_content},
-			IB_REGDATE = #{ib_regdate}
+			IB_REGDATE = #{ib_regdate},
+			IB_REPLY = #{ib_reply}
 			WHERE IB_ID = #{ib_id};
         ]]>
     </update>
