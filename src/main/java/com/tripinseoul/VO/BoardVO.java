@@ -14,7 +14,23 @@ public class BoardVO {
 	private int b_goodcnt;
 	private int b_commentcnt;
 	private int b_viewcnt;
+	private String searchType;
+	private String keyword;
 	
+	
+	
+	public String getSearchType() {
+		return searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
 	public int getB_id() {
 		return b_id;
 	}

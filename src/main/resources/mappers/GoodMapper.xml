@@ -5,6 +5,10 @@
  
 
 <mapper namespace="Good">
+	<select id="getCount" resultType="int">
+		SELECT COUNT(*) FROM GOOD
+		WHERE B_ID = #{b_id}
+	</select>
 
 	<select id="getGood" resultType="GoodVO" >
 		<![CDATA[

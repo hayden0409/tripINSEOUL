@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+/* Trip IN SEOUL 시작*/
+.planner-way-container {
+    height: 100vh;
+    background-color: rgb(200, 206, 253);
+}
+#way_title p{
+	width: 100vw;
+	font-size: 2.3rem;
+	font-family: '맑은 고딕';
+	font-weight: 900;
+	color: #115db4;
+	position: absolute;
+	top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#way_img img{
+	height: 450px;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#way_btn button{
+	width: 300px;
+	height: 60px;
+	position: absolute;
+	bottom: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	background-color: #115db4;
+	border: none;
+	border-radius: 30px;
+	box-shadow: 3px 3px 3px black;
+	transition-duration: 0.2s;
+	font-family: '맑은 고딕';
+	font-weight: 700;
+	font-size: 1.3rem;
+	color: #fcfafa;
+}
+#way_btn button:active{
+	margin-left: 5px;
+	margin-top: 5px;
+	box-shadow: none;
+}
+/* 반응형 웹 사이트를 위한 CSS */
+@media screen and (max-width: 768px) {
+    
+}
+/* Trip IN SEOUL 끝 */
+
+
+/* touristSpot 시작 */
+.main {
+	height:100vh;
+	margin-top: -30px;
+	background-color: rgb(248, 178, 134);
+}
+.list {
+  	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
+}
+.list img {
+  	border-radius:50%;
+	margin: 0 60px;
+} 
+.caption {
+	position: absolute;	
+	margin: 0 60px;
+	width: 400px;
+	height:400px;
+	border-radius:50%;
+	background:rgba(0,0,0,0.5);
+	opacity:0;  /* 글자 숨김 */ 
+	transition: all 0.6s ease-in-out;
+}
+.caption h1{
+	margin: 140px 0 30px 0;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 0.2em;
+	font-size: 4em;
+	font-family: '맑은 고딕';
+}
+.caption p {
+	color: #fff;
+	text-align: center;
+	font-family: '맑은 고딕';
+}
+.list li:hover .caption {
+	opacity: 1;  /* 설명글 보이게 */ 
+	transform: translateY(-405px);  /* 설명글 위로 이동 */
+}
+/* touristSpot 끝 */
+
+
+/* planner 시작*/
+.plan-container{
+	height: 100vh;
+}
+
+
+/* planner 끝 */

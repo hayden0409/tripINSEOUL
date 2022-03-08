@@ -9,5 +9,15 @@
 <body>
 	<h1> community detail</h1>
 	community detail
+	board:
+	${board }
+	<br><br>
+	good count:
+	${goodCnt }
+	<br><br>
+	comment:
+	${commentList}
+
+	
 </body>
 </html>

@@ -19,7 +19,7 @@ import com.tripinseoul.DAO.PlanDAO;
 import com.tripinseoul.VO.MemberVO;
 
 @Controller
-public class HCTestController {
+public class TestController {
 	@Autowired
 	Cat2DAO cdao;
 	@Autowired

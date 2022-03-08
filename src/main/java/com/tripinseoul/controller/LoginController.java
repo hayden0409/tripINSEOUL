@@ -28,7 +28,7 @@ public class LoginController {
 		System.out.println("login post");
 		HttpSession session = request.getSession();
 		MemberVO login = memberService.login(vo);
-	
+		
 		if(login==null){
 			System.out.println("id not exist");
 			

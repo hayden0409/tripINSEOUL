@@ -1,0 +1,180 @@
+/* header css */
+.wrap {
+	display: fixed;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #03254b;
+    padding: 8px 12px;	
+}
+
+.navbar_logo a{
+    font-size: 30px;
+    color: white;
+	display: flex;
+    align-items: center;
+}
+
+/*.navbar_logo i {
+    color: #67ccfa;
+}*/
+.navbar_logo img{
+	width: 55px;
+}
+.navbar_logo b{
+	margin-left: 15px;
+}
+
+.navbar_menu {
+    font-size: 24px;
+    color: gray;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+    background-color: #90CFF4;
+    border-radius: 4px;
+}
+
+.navbar_login {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar_login li {
+    padding: 8px 12px;
+}
+
+/* 반응형 웹 사이트를 위한 CSS */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_login {
+        justify-content: center;
+        width: 100%;
+    }
+}
+/* header css 끝 */
+
+/* main css 시작 */
+.slick-items div img{
+	width: 100vw;
+	height: 100vh;
+}
+
+.box {
+    width: 500px;
+    position: absolute;
+    top: 33%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.box h1 {
+    font-weight: normal;
+}
+
+.box input {
+    border: none;
+	display: inline-block;
+	float: left;
+}
+
+.box input[type=text] {
+    background-color: #fff;
+    width: 340px;
+    height: 35px;
+	margin-left: 18px;
+    border-radius: 25px 0 0 25px;
+	font-family: 'arial';
+	text-align: center;
+}
+
+.box input[type=submit] {
+    width: 120px;
+	height: 35px;
+    background-color: orange;
+    border-radius: 0 25px 25px 0;
+}
+/* main css 끝 */
+
+
+/* footer CSS 시작 */
+
+.footer{
+	display: fixed;
+	margin: 0 auto;
+	bottom: 0; left: 0;
+	background: #303164; 
+}
+
+.footaddr dl{
+	width: 100vw;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.footaddr dt a img{
+	width: 70px;
+}
+
+.footaddr dd{
+	margin-left: 20px;
+}
+
+.footaddr .addr li{
+	color: #c9c9cb;
+	font-family: 'arial';
+	font-size: 11px;
+	padding-bottom: 3px;
+}
+
+.footaddr dd.banner ul{
+	margin: 10px 0 10px 40px;
+}
+
+.footaddr dd.banner ul li{ 
+	display: inline-block; 
+	margin-left: 20px;
+}
+
+/* footer 끝 */

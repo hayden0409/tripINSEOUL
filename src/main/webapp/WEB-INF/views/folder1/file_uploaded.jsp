@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>
+	
 	file uploaded <br><br>
 	
 	저장된 경로 : ${path}
-	</h1>
+	
 </body>
 </html>

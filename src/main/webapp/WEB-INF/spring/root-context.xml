@@ -5,17 +5,17 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
-	<context:component-scan base-package="com.tripinseoul.VO"></context:component-scan>
-	<context:component-scan base-package="com.tripinseoul.DAO"></context:component-scan>
-	<context:component-scan base-package="com.tripinseoul.tripinseoul"></context:component-scan>
-	<context:component-scan base-package="com.tripinseoul.*"></context:component-scan>
 	
+	<context:component-scan base-package="com.tripinseoul.*"></context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
 	<!-- MySQL dataSource -->
 	
 	<!-- db 연결 -->
@@ -60,7 +60,7 @@
     
     <!-- 파일 업로드 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="100000"/> 
+		<property name="maxUploadSize" value="-1"/> 
 	</bean>
     
     

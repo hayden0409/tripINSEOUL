@@ -8,11 +8,13 @@
 </head>
 <body>
 	<script>
+		const searchBtn = document.getElementById("searchBtn");
 		const index = document.getElementById("index");
 		const start_date = document.getElementById("start_date");
 		const end_date = document.getElementById("end_date");
 		const dates = document.getElementById("dates");
 		var list = [];
+		
 		
 		
 		start_date.onchange = showDates;
@@ -61,7 +63,7 @@
 	        }
 	        return listDate;
 	    };
-	    showDates();
+	   showDates();
 	</script>
 
 </body>

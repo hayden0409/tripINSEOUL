@@ -44,7 +44,7 @@
 	</c:forEach>
 	<br>
 	<input type="text" name="searchKeyword"/>
-	<input type="submit" name="searchBtn" value="검색"/>
+	<input type="submit" name="searchBtn" id="searchBtn" value="검색"/>
 	
 	</form>
 	

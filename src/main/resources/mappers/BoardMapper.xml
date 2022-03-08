@@ -3,20 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<!-- 
-	BoardVO 객체 필드
-	
-	private int b_id;
-	private String m_id;
-	private String b_title;
-	private String b_content;
-	private String b_img;
-	private Date b_regdate;
-	private String b_cat;
-	private int b_goodcnt;
-	private int b_commentcnt;
-	private int b_viewcnt;
- -->
 <mapper namespace="Board">
 	
 	<select id="getBoard" resultType="BoardVO">
@@ -27,9 +13,16 @@
 	</select>
 	
 	<select id="getBoardList" resultType="BoardVO">
-		<![CDATA[
+	<![CDATA[
 			SELECT * FROM BOARD
-        ]]>
+	]]>
+        	<if test="keyword != null">
+        	 WHERE ${searchType} LIKE CONCAT('%',#{keyword},'%')
+	        	 <if test="b_cat != 'all'">
+	        	 	AND B_CAT = #{b_cat}
+	        	 </if>
+        	</if>
+        	
 	</select> 
 	
 	<insert id="insert" >

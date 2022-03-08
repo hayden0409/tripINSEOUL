@@ -28,6 +28,10 @@ public class GoodDAO {
 	public List<GoodVO> getGoodList(GoodVO vo){
 		return session.selectList("Good.getGoodList",vo);
 	}
+	//get good count by board id
+	public int getCount(GoodVO vo){
+		return session.selectOne("Good.getCount",vo);
+	}
 	
 	
 }

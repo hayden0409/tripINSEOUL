@@ -3,16 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<!-- 
-	private String m_id;
-	private String m_password;
-	private String m_email;
-	private String m_name;
-	private String m_gender;
-	private Date m_regdate;
-	private String m_ismanager;
-	private String m_nickname;
- -->
+
 <mapper namespace="Member">
 
 	<select id="getMember" resultType="MemberVO">
